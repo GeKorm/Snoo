@@ -1,0 +1,510 @@
+/**** -moz- prefix for filters doesn't work, I need to add a url() svg in the CSS, probably won't have time though ****/
+#overlay-outer {
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: #daf0fe;
+  box-shadow: inset 0 0 40px 10px rgba(255, 255, 255, 0.15);
+  cursor: default;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transition: all 0.8s ease-in-out;
+  overflow: hidden;
+}
+
+.blurhue {
+  -webkit-filter: blur(3px) hue-rotate(-16deg);
+  filter: blur(3px) hue-rotate(-16deg);
+  -moz-filter: blur(3px) hue-rotate(-16deg);
+}
+
+#overlay-inner {
+  z-index: 1001;
+  width: 90%;
+  display: inline-flex;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQYV2MMr5j4/+WTRwz4gLiMHAOjQ0zxf7yqoJLkKwRZAwLozkExEaYI5hRkxeQpBJlElNX4fE+8r4kNcADV6ic5M4CGiQAAAABJRU5ErkJggg==");
+  cursor: default;
+  user-select: none;
+  -moz-user-select: none;
+  box-shadow: inset 0 0 10px -3px rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.92);
+  /*
+  transform: matrix3d(0.8,0,0.00,0,0.00,0.5,0.00,-0.004,0,0,1,0,0,0,0,1);
+  -webkit-transform: matrix3d(0.8,0,0.00,0,0.00,0.5,0.00,-0.004,0,0,1,0,0,0,0,1);
+  -moz-transform: matrix3d(0.8,0,0.00,0,0.00,0.5,0.00,-0.004,0,0,1,0,0,0,0,1);
+  -o-transform: matrix3d(0.8,0,0.00,0,0.00,0.5,0.00,-0.004,0,0,1,0,0,0,0,1);
+  -ms-transform: matrix3d(0.8,0,0.00,0,0.00,0.5,0.00,-0.004,0,0,1,0,0,0,0,1);
+  transition: all 2s ease-in-out !important;
+  box-shadow: 0 -100px 1000px 20px rgba(8, 57, 77, 1);
+  */
+}
+
+.text {
+  position: absolute;
+  z-index: 1001;
+  text-shadow: 0 0 8px #000;
+  color: #FFF;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+  font-size: 4vw;
+  line-height: 1.56em;
+  transition: all 0.8s ease-in-out;
+   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+}
+
+@media(max-width: 616px) {
+  .text {
+    font-size: 22px;
+    text-shadow: 1px 0 2px #000, -1px 0 2px #000, 0 1px 2px #000, 0 -1px 2px #000;
+  }
+
+  #reddit-alien {
+    transform: scale(0.7) !important;
+    width: 0;
+  }
+
+  #lvltex {
+    font-size: 28px !important;
+  }
+}
+
+#lvltex {
+    text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);
+    animation-name: bounceUpDown;
+    animation-duration: 1.2s;
+    animation-iteration-count: 8;
+    animation-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    -webkit-animation-name: bounceUpDown;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-iteration-count: 8;
+    -webkit-animation-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    -moz-animation-name: bounceUpDown;
+    -moz-animation-duration: 1.2s;
+    -moz-animation-iteration-count: 8;
+    -moz-animation-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    transition: all 0.6s ease-in-out;
+
+-webkit-transition-timing-function: cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+   -moz-transition-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+     -o-transition-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+        transition-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650); /* custom */
+    transform-origin: 50% 0%;
+    z-index: 30000;
+}
+
+@keyframes bounceUpDown {
+  from {transform: translateY(0); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);}
+  50% {transform: translateY(8px); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 16px 2px rgba(0,0,0,0.1),               0px 26px 24px rgba(0,0,0,0.1);}
+  to {transform: translateY(0); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);}
+}
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+  overflow: hidden;
+}
+
+#otext {
+    /* opacity: 0; */
+}
+
+#stext {
+  opacity: 0;
+  color: rgb(221, 69, 42);
+  text-shadow: 0 0 8px rgb(163, 0, 0);
+  font-family: 'Nothing You Could Do', cursive;
+  transition: 0;
+}
+
+/** Reddit Alien **/
+/******************/
+
+#reddit-alien {
+  width: 296px;
+  height: 380px;
+  position: relative;
+  z-index: -1;
+  transition: all 0.8s ease-in-out;
+  /* -webkit-filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.75)); */
+  /* transform: scale(1.1); */
+  /*transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0.0055,0,0,1,0,0,0,0,1);
+  -webkit-transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0.0055,0,0,1,0,0,0,0,1);
+  -moz-transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0.0055,0,0,1,0,0,0,0,1);
+  -o-transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0.0055,0,0,1,0,0,0,0,1);
+  -ms-transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0.0055,0,0,1,0,0,0,0,1);*/
+}
+
+.tofront {
+  -webkit-filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.75));
+  transform: scale(1.1);
+}
+
+#reddit-alien div {
+  position: absolute;
+}
+
+#antenna {
+  height: 50px;
+  width: 44px;
+  top: 40px;
+  left: 155px;
+  border: 7px solid #222;
+  border-width: 9px 0 0 9px;
+  -webkit-border-radius: 5px 0 0 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px 0 0 0;
+  border-radius: 5px 0 0 0;
+  -webkit-transform: rotate(16deg);
+  -moz-transform: rotate(16deg);
+  -o-transform: rotate(16deg);
+  cursor: pointer;
+}
+
+#reddit-alien .dot {
+  width: 26px;
+  height: 26px;
+  left: 37px;
+  top: -28px;
+  border: 8px solid #222;
+  -webkit-border-radius: 26px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 26px;
+  border-radius: 26px;
+  background: #FFF;
+  cursor: pointer;
+}
+
+#reddit-alien .ear {
+  width: 32px;
+  height: 32px;
+  top: 100px;
+  border: 8px solid #222;
+  -webkit-border-radius: 32px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 32px;
+  border-radius: 32px;
+  background: #FFF;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px 10px rgb(245, 245, 245);
+}
+
+#ear-left {
+  left: 40px;
+  cursor: pointer;
+}
+
+#ear-right {
+  left: 216px;
+  cursor: pointer;
+}
+
+#alien-head {
+  z-index: 2;
+  top: 88px;
+  left: 52px;
+  height: 115px;
+  width: 182px;
+  border: 9px solid #222;
+  -webkit-border-radius: 150px 100px;
+  -webkit-background-clip: padding-box;
+  box-shadow: inset 0 0 10px 10px rgb(245, 245, 245);
+  -moz-border-radius: 150px / 100px;
+  border-radius: 150px / 100px;
+  background: #FFF;
+  cursor: pointer;
+}
+
+#reddit-alien .eye {
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  top: 29px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background: orangeRed;
+  cursor: pointer;
+}
+
+#eye-left {
+  left: 42px;
+  transform: scaleY(0.4) scaleX(0.7) skew(45deg);
+  border-radius: 16px/20px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes firePulse {
+  from { background-color: orangered;}
+  50% { background-color: red;}
+  to { background-color: orangered;}
+}
+
+@-moz-keyframes firePulse {
+  from { background-color: orangered;}
+  50% { background-color: red;}
+  to { background-color: orangered;}
+}
+
+@keyframes firePulse {
+  from { background-color: orangered;}
+  50% { background-color: red;}
+  to { background-color: orangered;}
+}
+
+#eye-left {
+  animation-name: firePulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: firePulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: firePulse;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+}
+
+#eye-right {
+  animation-name: firePulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: firePulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#eye-right {
+  left: 110px;
+  transform: scaleY(0.4) scaleX(0.7) skew(-45deg);
+  border-radius: 16px/20px;
+  cursor: pointer;
+}
+
+#mouth {
+  z-index: 1;
+  width: 94px;
+  height: 80px;
+  top: 3px;
+  left: 35px;
+  border: 9px solid #FFF;
+  border-bottom-color: #222;
+  -webkit-border-radius: 150px 120px;
+  -moz-border-radius: 150px / 120px;
+  border-radius: 150px / 120px;
+  border-right-color: rgba(255, 255, 255, 0);
+  border-top-color: rgba(255, 255, 255, 0);
+  border-left-color: rgba(255, 255, 255, 0);
+  transform-origin: 50% 90% 0px;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+#alien-body {
+  z-index: 1;
+  width: 88px;
+  height: 178px;
+  left: 100px;
+  top: 150px;
+  border: 8px solid #222;
+  -webkit-border-radius: 120px 250px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 120px / 250px;
+  border-radius: 120px / 250px;
+  background: #FFF;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px 10px rgb(245, 245, 245);
+}
+
+#reddit-alien .arm {
+  height: 78px;
+  width: 39px;
+  top: 210px;
+  border: 8px solid #222;
+  background: #FFF;
+  -webkit-background-clip: padding-box;
+  cursor: pointer;
+}
+
+#arm-left {
+  left: 78px;
+  -webkit-border-radius: 43px 0 0 43px;
+  -moz-border-radius: 80px 0 0 90px;
+  border-radius: 43px 0 0 43px;
+  cursor: pointer;
+  box-shadow: inset -25px -2px 6px 3px rgb(192, 192, 192);
+}
+
+#arm-right {
+  left: 170px;
+  -webkit-border-radius: 0 43px 43px 0;
+  -moz-border-radius: 0 80px 90px 0;
+  border-radius: 0 43px 43px 0;
+  cursor: pointer;
+  box-shadow: inset 25px -2px 6px 3px rgb(192, 192, 192);
+}
+
+#reddit-alien .foot {
+  border: 8px solid #222;
+  width: 50px;
+  height: 16px;
+  top: 312px;
+  background: #FFF;
+  -webkit-background-clip: padding-box;
+  cursor: pointer;
+  box-shadow: inset -2px 2px 6px 3px rgb(192, 192, 192);
+}
+
+#foot-left {
+  -webkit-border-radius: 24px 24px 0 0;
+  -moz-border-radius: 30px 0 0 10px;
+  border-radius: 24px 24px 0 0;
+  left: 82px;
+  cursor: pointer;
+}
+
+#foot-right {
+  -webkit-border-radius: 24px 24px 0 0;
+  -moz-border-radius: 0 30px 10px 0;
+  border-radius: 24px 24px 0 0;
+  left: 156px;
+  cursor: pointer;
+}
+
+#split {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1003;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+#upper {
+  width: 100%;
+  height: 50%;
+  z-index: 1001;
+  background: #EEE;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+  /* transform: translateY(-2000px); */
+  /* transform: scaleY(0); */
+  transition: all 2s ease-in;
+  overflow: hidden;
+  transform-origin: 50% 0%;
+  cursor: pointer;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASklEQVQYV2OMM1H//+83A1bw+v0rBlFBMbAcI9EKGxys/oN0HL93ncFSSRO70TATQbIvXyGswaYabPUAKYR5Bpu7kD1IfPAQG44AKBY3hVsx0gYAAAAASUVORK5CYII=");
+}
+
+#lower {
+  width: 100%;
+  height: 50%;
+  z-index: 1005;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASklEQVQYV2OMM1H//+83A1bw+v0rBlFBMbAcI9EKGxys/oN0HL93ncFSSRO70TATQbIvXyGswaYabPUAKYR5Bpu7kD1IfPAQG44AKBY3hVsx0gYAAAAASUVORK5CYII=");
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.75); */
+  /* transform: translateY(2000px); */
+  /* transform: scaleY(0); */
+  transition: all 2s ease-in;
+  transform-origin: 50% 100%;
+  cursor: pointer;
+  opacity: 1;
+}
+
+@-webkit-keyframes fbBounce {
+  from { transform: scale(5) translateX(0) translateY(0); opacity: 0;}
+  1% { opacity: 1;}
+  6% { transform: scale(1) translateX(0) translateY(0);}
+  16% { transform: scale(1) translateX(4px) translateY(-4px);}
+  29% { transform: scale(1) translateX(-5px) translateY(5px); opacity: 1;}
+  34% { transform: scale(1) translateX(1px) translateY(8px);}
+  to { transform: scale(1) translateX(0) translateY(0); opacity: 0;}
+}
+
+@keyframes fbBounce {
+  from { transform: scale(5) translateX(0) translateY(0); opacity: 0;}
+  1% { opacity: 1;}
+  6% { transform: scale(1) translateX(0) translateY(0);}
+  16% { transform: scale(1) translateX(4px) translateY(-4px);}
+  29% { transform: scale(1) translateX(-5px) translateY(5px); opacity: 1;}
+  34% { transform: scale(1) translateX(1px) translateY(8px);}
+  to { transform: scale(1) translateX(0) translateY(0); opacity: 0;}
+}
+
+#stext {
+  animation-name: fbBounce;
+  animation-duration: 0.9s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: fbBounce;
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-iteration-count: 1;
+}
+
+/*************  element jitter Y-axis ***********
+item {
+  animation-name: bgScroll;
+  animation-iteration-count: infinite;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  transition: 0;
+}
+
+@keyframes bgScroll {
+  from{ background-position-y: 0;}
+  to{ background-position-y: 1px;}
+}
+
+*/
+
+#madeby {
+    width: 100%;
+    z-index: -10;
+    height: 100%;
+    background: #111;
+    position: absolute;
+}
+
+#madetex {  color: #FFF;
+    position: relative;
+  width: 80%;  float: right;  display: inline-block;  text-align: center;  padding-top: 20px;  line-height: 3em;}
+a {
+    text-decoration: none;
+    color: #666;
+    transition: all 0.2s ease-out;
+}
+a:hover {
+    color: #999;
+    transition: 0;
+}
+
