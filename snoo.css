@@ -121,6 +121,12 @@
   to {transform: translateY(0); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);}
 }
 
+@-webkit-keyframes bounceUpDown {
+  from {transform: translateY(0); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);}
+  50% {transform: translateY(8px); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 16px 2px rgba(0,0,0,0.1),               0px 26px 24px rgba(0,0,0,0.1);}
+  to {transform: translateY(0); text-shadow: 0px 3px 0px rgba(178, 169, 143, 1),               0px 14px 10px rgba(0,0,0,0.15),               0px 24px 2px rgba(0,0,0,0.1),               0px 34px 30px rgba(0,0,0,0.1);}
+}
+
 body {
   background-color: #F8F8F8;
   font-family: 'Open Sans', sans-serif;
@@ -507,4 +513,3 @@ a:hover {
     color: #999;
     transition: 0;
 }
-
